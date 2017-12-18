@@ -8,9 +8,8 @@ setup(
     name = "blink",
     version = "0.1.0",
     author = "CaTaLiS",
-    author_email = "sylwiusz.kosacz@gmail.com",
+    author_email = "catalis.dev@gmail.com",
     description = ("blinking led"),
-    license = "BSD",
     keywords = "blink led gpio",
     url = "https://github.com/CaTaLiS/blink",
     packages = ['blink', 'tests'],
@@ -18,6 +17,5 @@ setup(
     classifiers = [
         "Development Status :: 1 - Planning",
         "Topic :: Utilities",
-        "License :: OSI Approved :: BSD License",
     ],
 )
