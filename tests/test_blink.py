@@ -1,5 +1,7 @@
 import unittest
+from mock import patch
 from blink.blink import get_delay_in_sec
+from blink.blink import get_delay_arg_from_console
 
 class TestBlink(unittest.TestCase):
     
@@ -33,6 +35,30 @@ class TestBlink(unittest.TestCase):
         
         # then
         self.assertEquals(result, expected_delay)
+        
+    def test_return_empty_string_when_no_args_passed(self):
+        # given
+        expected_arg = ''
+        test_args = ['path']
+        
+        # when
+        with patch('sys.argv', test_args):
+            result = get_delay_arg_from_console()
+        
+        # then
+        self.assertEquals(result, expected_arg)
+        
+    def test_return_value_when_args_passed(self):
+        # given
+        expected_arg = 'test'
+        test_args = ['path', expected_arg]
+        
+        # when
+        with patch('sys.argv', test_args):
+            result = get_delay_arg_from_console()
+            
+        # then
+        self.assertEquals(result, expected_arg)
         
     if __name__ == '__main__':
         unittest.main()
