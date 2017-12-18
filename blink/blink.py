@@ -16,7 +16,7 @@ def get_delay_in_sec(arg):
             delay_in_sec = float(arg)
             print('Setting delay between blinks to {0} sec').format(delay_in_sec)
             return delay_in_sec
-        except TypeError:
+        except ValueError:
             print('Not a float delay argument. Setting to default value of {0} sec').format(default_delay_in_sec)
             return default_delay_in_sec
     print('Not entered a delay argument. Setting to default value of {0} sec').format(default_delay_in_sec)
